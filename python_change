@@ -1,0 +1,37 @@
+def run ():
+	decimal = (int(input("Ingrese un número decimal: ")))
+	modulo = [] 
+	residuo = decimal // 2 
+	modulo.append(decimal%2)
+	
+	if decimal == 1 or decimal == 0:
+		print("Para estos casos el número binario es el mismo decimal 😁")
+		repeat()
+	else:
+		while residuo != 1:
+			residuo = residuo // 2
+			decimal = decimal // 2
+			modulo.append(decimal%2)
+		modulo.append(residuo)
+		print ("➡ El número binario es: ",modulo[::-1], " ❗")
+		repeat()
+
+
+def repeat():
+	menu = """--------------------------------------
+	Deseas ingresar otro número para hacer la conversión
+	1 - SI 😁
+	2 - NO 🤔
+
+	Elige una opcción: 	"""
+	opccion = input(menu)
+	if opccion == "1":
+		run()
+	elif opccion == "2":
+		print("Espero verte pronto, y nunca pares de aprender")
+	else:
+		print("No es una opcción valida")
+		repeat()
+	
+if __name__ == "__main__":
+	run()
